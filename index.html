@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário para Hotel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 120px); 
+        }
+        .caixa {
+            width: calc(50% - 20px);
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            position: relative; 
+        }
+        .caixa:hover {
+            background-color: #f0f0f0;
+        }
+        .caixa.full-width {
+            width: calc(100% - 20px);
+        }
+        .icon-cama, .icon-calendario, .icon-pessoa {
+            position: absolute;
+            top: 50%; 
+            transform: translateY(-50%);
+            color: #ccc;
+        }
+        .icon-cama {
+            left: 10px; 
+        }
+        .icon-calendario {
+            right: 10px;
+        }
+        .icon-pessoa {
+            left: 10px; 
+        }
+        input[type="text"] {
+            border: none;
+            width: calc(100% - 30px); 
+        }
+        #search-button {
+            background-color: pink; 
+            color: white;
+            text-transform: uppercase; 
+            padding: 10px 30px; 
+            border: none; 
+            cursor: pointer; 
+            transition: background-color 0.3s; 
+            margin-top: 20px;
+        }
+        #search-button:hover {
+            background-color: #ff80bf; 
+        }
+        #btn-cadastro, #btn-login {
+            background-color: pink; 
+            color: white; 
+            padding: 8px 16px;
+            border: none; 
+            cursor: pointer; 
+            transition: background-color 0.3s; 
+            margin-top: 10px; 
+        }
+        #btn-cadastro:hover, #btn-login:hover {
+            background-color: #ff80bf; 
+        }
+        #btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        #btn-container button {
+            margin: 0 5px; /* Adjust margin between buttons */
+        }
+        #imagem-central {
+            text-align: center;
+            margin-top: 60px;
+            width: 100%; 
+            max-width: 800px; 
+            height: auto; 
+        }
+        #imagem-central img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+        #texto-canto-superior-esquerdo {
+            position: absolute; 
+            top: 10px;
+            left: 50px; 
+            color: #ff007f; 
+            font-size: 20px; 
+            font-weight: bold; 
+        }
+    </style>
+</head>
+<body>
+    <div id="texto-canto-superior-esquerdo">Casa na Árvore.com</div>
+    <div class="container">
+        <div class="caixa" onclick="document.getElementById('fname').focus();">
+            <i class="fas fa-bed icon-cama"></i>
+            <form>
+                <label for="fname">Para Onde Você Vai?:</label><br>
+                <input type="text" id="fname" name="name">
+            </form>
+        </div>
+        <div class="caixa" onclick="document.getElementById('lname').focus();">
+            <form>
+                <label for="lname"> Dom,17 Mar-- Seg, 18 Mar.:<i class="far fa-calendar-alt icon-calendario"></i></label><br>
+                <input type="text" id="lname" name="lname">
+            </form>
+        </div>
+        <div class="caixa" onclick="document.getElementById('adults').focus();">
+            <form>
+                <label for="adults">02 Adultos - 0 Criança - 1 Quarto:<i class="fas fa-user icon-pessoa"></i></label><br>
+                <input type="text" id="adults" name="name">
+            </form>
+        </div>
+    </div>
+    <div style="text-align: center;">
+        <input type="submit" id="search-button" value="Pesquisar">
+    </div>
+    <div id="imagem-central">
+        <img src="https://example.com/portada_UrbanTreehouse_014.jpg" alt="Imagem Central">
+    </div>
+    <div id="btn-container">
+        <button id="btn-cadastro">Cadastro</button>
+        <button id="btn-login">Login</button>
+    </div>
+</body>
+</html>
