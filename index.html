@@ -11,6 +11,7 @@
             margin: 0; 
             padding: 0; 
         }
+
         .container {
             display: flex;
             flex-wrap: wrap;
@@ -34,20 +35,11 @@
         .caixa.full-width {
             width: calc(100% - 20px);
         }
-        .icon-cama, .icon-calendario, .icon-pessoa {
-            position: absolute;
-            top: 50%; 
-            transform: translateY(-50%);
-            color: #ccc;
-        }
-        .icon-cama {
-            left: 10px; 
-        }
         .icon-calendario {
             right: 10px;
         }
         .icon-pessoa {
-            left: 10px; 
+            left: 30px; 
         }
         input[type="text"] {
             border: none;
@@ -84,7 +76,7 @@
             margin-top: 20px;
         }
         #btn-container button {
-            margin: 0 5px; /* Adjust margin between buttons */
+            margin: 0 5px; 
         }
         #imagem-central {
             text-align: center;
@@ -105,28 +97,78 @@
             font-size: 20px; 
             font-weight: bold; 
         }
+
+        /* Estilos para a caixa de mensagem "Fale Conosco" */
+        #fale-conosco {
+            position: fixed;
+            top: 20%;
+            right: 5%;
+            width: 300px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+        }
+
+        #fale-conosco h2 {
+            text-align: center;
+        }
+
+        #fale-conosco form {
+            margin-top: 20px;
+        }
+
+        #fale-conosco label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        #fale-conosco input[type="text"],
+        #fale-conosco input[type="email"],
+        #fale-conosco textarea {
+            width: calc(100% - 12px);
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+
+        #fale-conosco textarea {
+            resize: none;
+        }
+
+        #fale-conosco input[type="submit"] {
+
+            background-color: pink;
+            color: rgb(118, 51, 115);
+            border: none;
+            padding: 1px 1px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #fale-conosco input[type="submit"]:hover {
+            background-color: #ff80bf;
+        }
     </style>
 </head>
 <body>
     <div id="texto-canto-superior-esquerdo">Casa na Árvore.com</div>
     <div class="container">
-        <div class="caixa" onclick="document.getElementById('fname').focus();">
-            <i class="fas fa-bed icon-cama"></i>
+        <div class="caixa" onclick="document.getElementById('checkin').focus();">
             <form>
-                <label for="fname">Para Onde Você Vai?:</label><br>
-                <input type="text" id="fname" name="name">
+                <label for="checkin">CHECKIN: <i class="far fa-calendar-alt icon-calendario"></i></label><br>
+                <input type="text" id="checkin" name="checkin">
             </form>
         </div>
-        <div class="caixa" onclick="document.getElementById('lname').focus();">
+        <div class="caixa" onclick="document.getElementById('checkout').focus();">
             <form>
-                <label for="lname"> Dom,17 Mar-- Seg, 18 Mar.:<i class="far fa-calendar-alt icon-calendario"></i></label><br>
-                <input type="text" id="lname" name="lname">
+                <label for="checkout">CHECKOUT: <i class="far fa-calendar-alt icon-calendario"></i></label><br>
+                <input type="text" id="checkout" name="checkout">
             </form>
         </div>
-        <div class="caixa" onclick="document.getElementById('adults').focus();">
+        <div class="caixa" onclick="document.getElementById('hospedes').focus();">
             <form>
-                <label for="adults">02 Adultos - 0 Criança - 1 Quarto:<i class="fas fa-user icon-pessoa"></i></label><br>
-                <input type="text" id="adults" name="name">
+                <label for="hospedes">HÓSPEDES: <i class="fas fa-user icon-pessoa"></i></label><br>
+                <input type="text" id="hospedes" name="hospedes">
             </form>
         </div>
     </div>
@@ -134,11 +176,55 @@
         <input type="submit" id="search-button" value="Pesquisar">
     </div>
     <div id="imagem-central">
-        <img src="https://example.com/portada_UrbanTreehouse_014.jpg" alt="Imagem Central">
+        <img src="C:\Users\User\Desktop\formulario p Hotel\portada_UrbanTreehouse_014.jpg" alt="Imagem Central">
+    </div>
+    <div id="imagem-central">
+        <img src="421644423.jpg" alt="right">
+    </div>
+    <div id="imagem-central">
+        <img src="images.jpeg" alt="right">
+    </div>
+    <div id="fale-conosco">
+        <h2>Fale Conosco</h2>
+        <form action="#">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+
+            <input type="submit" value="Enviar">
+        </form>
     </div>
     <div id="btn-container">
-        <button id="btn-cadastro">Cadastro</button>
+        <button id="btn-cadastro" onclick="mostrarFormularioCadastro()">Cadastro</button>
         <button id="btn-login">Login</button>
     </div>
+    <div id="cadastro-form" style="display: none;">
+        <h2>Cadastro</h2>
+        <form action="processar_cadastro.php" method="POST">
+            <label for="nome">Nome:</label><br>
+            <input type="text" id="nome" name="nome" required><br><br>
+
+            <label for="telefone">Telefone:</label><br>
+            <input type="tel" id="telefone" name="telefone" pattern="[0-9]{10}" required><br><br>
+
+            <label for="email">E-mail:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <input type="submit" value="Cadastrar">
+        </form>
+    </div>
+
+    <script>
+        function mostrarFormularioCadastro() {
+            document.getElementById('cadastro-form').style.display = 'block';
+            window.location = "formulario.cadastro.html";
+        }
+    </script>
+   
 </body>
 </html>

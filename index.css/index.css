@@ -1,4 +1,66 @@
 body {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    
+    form {
+        font-family: Verdana,Tahoma,sans-serif;
+        font-size: 15px;
+        background-color: #CC3300;
+        max-width: 500px;
+    }
+    
+    h1 {
+        margin-bottom: 20px;
+        margin-left: 20px;
+        color: #66FFFF;
+        text-shadow: 5px 5px 5px black;
+    }
+    
+    input, textarea {
+        width: 200px;
+        padding: 10px;
+        color: black;
+        margin-left: 20px;
+        margin-top: 10px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border: 1px solid;
+    }
+    
+    input:hover, textarea:hover, input:focus, textarea:focus {
+        border-color: #000066;
+        box-shadow: 5px 0px 9px #FFFF00;
+        background-color: #66FFFF;
+        color: black;
+        font-weight: bold;
+    }
+    
+    .enviar {
+        background-color: #66FFFF;
+        height: 40px;
+        width: 100px;
+        font-weight: bold;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border: 1px solid;
+        color: rgb(226, 10, 10);
+    }
+    
+    textarea {
+        width: 400px;
+        height: 120px;
+        line-height: 20px;
+        max-width: 400px;
+    }
+    
+    form label {
+        margin-left: 20px;
+        color: #FFFFFF;
+        font-weight: bold;
+    }
     font-family: Arial, sans-serif; 
     margin: 0; 
     padding: 0; 
@@ -10,6 +72,14 @@ body {
     justify-content: center;
     align-items: center;
     height: calc(100vh - 120px); 
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 120px); 
+    background-color: #f30885; 
 }
 
 .caixa {
@@ -31,20 +101,11 @@ body {
     width: calc(100% - 20px);
 }
 
-.icon-cama, .icon-calendario, .icon-pessoa {
-    position: absolute;
-    top: 50%; 
-    transform: translateY(-50%);
-    color: #ccc;
-}
-
-.icon-cama {
-    left: 10px; 
-}
-
 .icon-calendario {
     right: 10px;
 }
+
+
 
 .icon-pessoa {
     left: 10px; 
@@ -57,7 +118,7 @@ input[type="text"] {
 
 #search-button {
     background-color: pink; 
-    color: white;
+    color: rgb(236, 24, 24);
     text-transform: uppercase; 
     padding: 10px 30px; 
     border: none; 
@@ -81,8 +142,9 @@ input[type="text"] {
 }
 
 #btn-cadastro:hover, #btn-login:hover {
-    background-color: #ff80bf; 
+    background-color: #e71e61; 
 }
+
 
 #btn-container {
     display: flex;
